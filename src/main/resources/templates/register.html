@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="card">
+                        <div class="card-header text-center fs-4">Register</div>
+                        <div class="card-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label>Enter Full Name
+                                        <input type="text" name="fullName" class="form-control">
+                                    </label>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Enter Email
+                                        <input type="text" name="email" class="form-control">
+                                    </label>
+                                </div>
+                                <div class="mb-3"> col-md-12
+                                    <label>Enter Address
+                                        <input type="text" name="address" class="form-control">
+                                    </label>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Enter Qualification
+                                        <input type="text" name="qualification" class="form-control">
+                                    </label>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Enter Password
+                                        <input type="text" name="password" class="form-control">
+                                    </label>
+                                </div>
+                                <button class="btn btn-primary col-md-12" type="submit">Register</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+</html>
