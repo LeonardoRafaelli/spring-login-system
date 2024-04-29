@@ -13,30 +13,30 @@
                     <div class="card">
                         <div class="card-header text-center fs-4">Register</div>
                         <div class="card-body">
-                            <form th:action="@{/register/create_user}" th:object="${user}" method="post">
+                            <form action="/create_user" method="post">
                                 <div class="mb-3">
                                     <label>Enter Full Name
-                                        <input type="text" th:field="*{fullName}" name="fullName" class="form-control">
+                                        <input type="text" name="fullName" class="form-control">
                                     </label>
                                 </div>
                                 <div class="mb-3">
                                     <label>Enter Email
-                                        <input type="text" th:field="*{email}" name="email" class="form-control">
+                                        <input type="text" name="email" class="form-control">
                                     </label>
                                 </div>
                                 <div class="mb-3">
                                     <label>Enter Address
-                                        <input type="text" th:field="*{address}" name="address" class="form-control">
+                                        <input type="text" name="address" class="form-control">
                                     </label>
                                 </div>
                                 <div class="mb-3">
                                     <label>Enter Qualification
-                                        <input type="text" th:field="*{qualification}" name="qualification" class="form-control">
+                                        <input type="text" name="qualification" class="form-control">
                                     </label>
                                 </div>
                                 <div class="mb-3">
                                     <label>Enter Password
-                                        <input type="text" th:field="*{password}" name="password" class="form-control">
+                                        <input type="text" name="password" class="form-control">
                                     </label>
                                 </div>
                                 <button class="btn btn-primary col-md-12" type="submit">Register</button>

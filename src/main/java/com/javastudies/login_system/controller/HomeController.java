@@ -21,15 +21,13 @@ public class HomeController {
     }
     @GetMapping("/register")
     public String register(Model model){
-        UserDtls user = new UserDtls();
-        model.addAttribute("user", user);
         return "register";
     }
 
-    @PostMapping("/register/create_user")
-    public String saveUser(@ModelAttribute("user") UserDtls userDtls){
+    @PostMapping("/create_user")
+    public String saveUser(@ModelAttribute UserDtls userDtls){
         userService.createUser(userDtls);
-        return "redirect:/";
+        return "redirect:/login";
     }
 
     @GetMapping("/login")
