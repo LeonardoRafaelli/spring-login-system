@@ -2,6 +2,7 @@ package com.javastudies.login_system.controller;
 
 import com.javastudies.login_system.model.UserDtls;
 import com.javastudies.login_system.service.UserServiceImpl;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,7 +26,14 @@ public class HomeController {
     }
 
     @PostMapping("/create_user")
-    public String saveUser(@ModelAttribute UserDtls userDtls){
+    public String saveUser(@ModelAttribute UserDtls userDtls, HttpSession session){
+
+        // Check if email already exists
+        if(userService.checkEmail(userDtls.getEmail())) {
+            session.setAttribute("msg", "Email already registered!");
+         return "redirect:/register";
+        }
+
         userService.createUser(userDtls);
         return "redirect:/login";
     }

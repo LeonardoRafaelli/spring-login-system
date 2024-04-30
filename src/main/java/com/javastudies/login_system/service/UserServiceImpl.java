@@ -15,4 +15,9 @@ public class UserServiceImpl implements UserService{
     public UserDtls createUser(UserDtls user) {
         return userRepo.save(user);
     }
+
+    @Override
+    public boolean checkEmail(String email) {
+        return userRepo.existsByEmail(email);
+    }
 }
