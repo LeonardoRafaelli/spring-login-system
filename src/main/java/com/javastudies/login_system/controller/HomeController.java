@@ -25,24 +25,27 @@ public class HomeController {
         return "register";
     }
 
-    @PostMapping("/create_user")
+    @PostMapping("/create-user")
     public String saveUser(@ModelAttribute UserDtls userDtls, HttpSession session){
-
+        System.out.println("CHEGOU AQUI - Register");
         // Check if email already exists
         if(userService.checkEmail(userDtls.getEmail())) {
             session.setAttribute("msg", "Email already registered!");
          return "redirect:/register";
         }
 
-        userService.createUser(userDtls);
+        if(userService.createUser(userDtls) != null){
+            System.out.println("Criou o Usuário");
+        } else {
+            System.out.println("Não criou");
+        }
         return "redirect:/login";
     }
 
-    @GetMapping("/signin")
+    @GetMapping("/login")
     public String login(){
         return "login";
     }
-
 
 
 }

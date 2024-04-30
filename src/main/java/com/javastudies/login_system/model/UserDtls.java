@@ -1,5 +1,6 @@
 package com.javastudies.login_system.model;
 
+import com.javastudies.login_system.service.UserRole;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,4 +24,6 @@ public class UserDtls {
     private String qualification;
 
     private String password;
+
+    private UserRole role;
 }
