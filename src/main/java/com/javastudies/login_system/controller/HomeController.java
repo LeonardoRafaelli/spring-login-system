@@ -38,7 +38,7 @@ public class HomeController {
         return "redirect:/login";
     }
 
-    @GetMapping("/login")
+    @GetMapping("/signin")
     public String login(){
         return "login";
     }
